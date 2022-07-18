@@ -1,0 +1,33 @@
+.FilterBar {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 33px;
+  background-color: #5B5B5B;
+
+  &__params {
+    display: flex;
+    gap: 42px;
+  }
+
+  &__param {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #C0C0C0;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__clear {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #C0C0C0;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}
