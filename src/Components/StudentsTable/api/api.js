@@ -1,9 +1,6 @@
-const API_URL = (
-  'https://test-task-j.herokuapp.com/data?page=1&size=10'
-);
-
-export const getPeople = async() => {
-  const responce = await fetch(API_URL);
+export const getPeople = async(page, size) => {
+  const responce = await
+  fetch(`https://test-task-j.herokuapp.com/data?page=${page}&size=${size}`);
 
   return responce.json();
 };

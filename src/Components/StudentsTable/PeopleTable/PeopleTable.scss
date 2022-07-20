@@ -1,5 +1,7 @@
 .PeopleTable {
   width: 100%;
+  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+  border-bottom: 1px solid #C0C0C0;
 
   &__headers {
     padding: 14px 0;
