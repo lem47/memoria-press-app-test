@@ -1,0 +1,43 @@
+.PeopleTable {
+  width: 100%;
+  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+  border-bottom: 1px solid #C0C0C0;
+
+  &__headers {
+    padding: 14px 0;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    color: #777;
+  }
+
+  &__checkbox {
+    margin: 0 26px 0 23px;
+    cursor: pointer;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__name {
+    display: inline;
+    color: #828282;
+  }
+
+  &__az {
+    margin-right: 25px;
+    cursor: pointer;
+  }
+
+  &__arrows {
+    margin-right: 29px;
+    cursor: pointer;
+  }
+
+  &__content {
+    text-align: left;
+    color: #828282;
+  }
+}

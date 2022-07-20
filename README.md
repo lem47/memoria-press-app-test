@@ -1,9 +1,16 @@
-# React Starter Pack
+# DEMO
 
-To use this template click `Use this template`
+- [https://lem47.github.io/memoria-press-app-test/]()
 
-### Available Scripts
+## Description
 
-`Deploy` - available to deploy your application to gh-pages
+* All data comes from the server;
+* Headers of the page are hardcoded;
+* Search, sorting and pagination are fully functional;
+* You can click on the row of the student to see the internal table with the test results;
+* You can push CSV button and generate a .csv file with data displayed in the table.
 
-`SCSS Preprocessor` - available to write your styles with modern style language
+### Installing
+* Fork and clone this repository
+* Run `npm install` in your terminal
+* Run `npm start`

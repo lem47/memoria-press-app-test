@@ -1,0 +1,54 @@
+.Header {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  &__school {
+    padding: 0 94px 0 233px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__links {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__link {
+    color: #777;
+    text-transform: uppercase;
+    text-decoration: none;
+    user-select: none;
+
+    &-active {
+      width: 100px;
+      height: 32px;
+      color: #fff;
+      background-color: #A6192E;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+
+  &__user {
+    padding: 0 47px 0 312px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+  }
+
+  &__userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 5px;
+  }
+}
