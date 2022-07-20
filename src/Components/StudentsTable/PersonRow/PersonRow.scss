@@ -8,8 +8,19 @@
     cursor: pointer;
   }
 
+  &__parents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__info {
     margin-right: 7px;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    margin-right: 26px;
     cursor: pointer;
   }
 }
