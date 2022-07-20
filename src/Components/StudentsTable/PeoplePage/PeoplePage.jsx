@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './PeoplePage.scss';
-import { getPeople } from '../api/api';
+import { getStudents } from '../api/api';
 import { PeopleTable } from '../PeopleTable/PeopleTable';
 import { Spinner } from '../Spinner/Spinner';
 import Pagination from '../../Pagination/Pagination';
@@ -19,20 +19,22 @@ export const PeoplePage = () => {
   };
 
   useEffect(() => {
-    const getPeopleFromServer = async() => {
-      const result = await getPeople(page, size);
+    const getStudentsFromServer = async() => {
+      const result = await getStudents(page, size);
 
       setPeople(result);
     };
 
-    getPeopleFromServer();
+    getStudentsFromServer();
   }, [page, size]);
 
   return (
     <div className="PeoplePage">
       {people ? (
         <>
-          <PeopleTable people={people} />
+          <PeopleTable
+            people={people}
+          />
           <Pagination
             people={people}
             changePage={changePage}
