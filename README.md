@@ -1,6 +1,6 @@
 # DEMO
 
-- [https://lem47.github.io/memoria-press-app-test/]()
+[PUSH ME TO ENTER](https://lem47.github.io/memoria-press-app-test/)
 
 ## Description
 
