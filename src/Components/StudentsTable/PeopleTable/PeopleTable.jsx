@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import './PeopleTable.scss';
 import { PersonRow } from '../PersonRow/PersonRow';
 
-export const PeopleTable = ({ people }) => (
+export const PeopleTable = ({
+  people,
+  changeSortBy,
+}) => (
   <table className="PeopleTable">
     <thead>
       <tr>
-        <th className="PeopleTable__headers">
+        <th className="PeopleTable__headers" style={{ width: 420 }}>
           <div className="PeopleTable__header">
             <div>
               <svg
@@ -35,6 +38,9 @@ export const PeopleTable = ({ people }) => (
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="PeopleTable__az"
+              onClick={() => {
+                changeSortBy('name');
+              }}
             >
               <path
                 d="M8.95998 2.10666L7.38665 0.533325L5.81332
@@ -50,9 +56,10 @@ export const PeopleTable = ({ people }) => (
             </svg>
           </div>
         </th>
-        <th className="PeopleTable__headers">
+        <th className="PeopleTable__headers" style={{ width: 100 }}>ID</th>
+        <th className="PeopleTable__headers" style={{ width: 100 }}>
           <div className="PeopleTable__header">
-            <p className="PeopleTable__name">ID</p>
+            <p className="PeopleTable__name">Class</p>
             <svg
               width="8"
               height="12"
@@ -60,6 +67,9 @@ export const PeopleTable = ({ people }) => (
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="PeopleTable__arrows"
+              onClick={() => {
+                changeSortBy('class');
+              }}
             >
               <path
                 d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
@@ -71,8 +81,7 @@ export const PeopleTable = ({ people }) => (
             </svg>
           </div>
         </th>
-        <th className="PeopleTable__headers">Class</th>
-        <th className="PeopleTable__headers">
+        <th className="PeopleTable__headers" style={{ width: 130 }}>
           <div className="PeopleTable__header">
             <p className="PeopleTable__name">Av. Score, %</p>
             <svg
@@ -82,6 +91,9 @@ export const PeopleTable = ({ people }) => (
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="PeopleTable__arrows"
+              onClick={() => {
+                changeSortBy('score');
+              }}
             >
               <path
                 d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
@@ -93,7 +105,7 @@ export const PeopleTable = ({ people }) => (
             </svg>
           </div>
         </th>
-        <th className="PeopleTable__headers">
+        <th className="PeopleTable__headers" style={{ width: 140 }}>
           <div className="PeopleTable__header">
             <p className="PeopleTable__name">Av. Speed</p>
             <svg
@@ -103,6 +115,9 @@ export const PeopleTable = ({ people }) => (
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               className="PeopleTable__arrows"
+              onClick={() => {
+                changeSortBy('speed');
+              }}
             >
               <path
                 d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
@@ -129,4 +144,5 @@ export const PeopleTable = ({ people }) => (
 PeopleTable.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   people: PropTypes.object.isRequired,
+  changeSortBy: PropTypes.func.isRequired,
 };
