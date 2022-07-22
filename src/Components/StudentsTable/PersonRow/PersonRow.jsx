@@ -88,6 +88,9 @@ export const PersonRow = ({ person }) => (
 );
 
 PersonRow.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  person: PropTypes.object.isRequired,
+  person: PropTypes.node,
+};
+
+PersonRow.defaultProps = {
+  person: {},
 };

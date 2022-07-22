@@ -1,40 +1,39 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
 import './Pagination.scss';
+import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
+import { fetchData } from '../../toolkitRedux/services/studentsApi';
 
-export default function Pagination({ people, changePage, changeSize }) {
-  const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+export default function Pagination() {
+  const dispatch = useDispatch();
+  const people = useSelector(state => state.data);
+
+  let page = 0;
+  let size = 10;
+
+  useEffect(() => {
+    dispatch(fetchData(page, size));
+  }, [page, size]);
 
   const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-    changePage(newPage + 1);
+    page = newPage;
   };
 
   const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(parseInt(event.target.value, 10));
-    changeSize(parseInt(event.target.value, 10));
-    setPage(0);
+    size = (parseInt(event.target.value, 10));
+    page = 0;
   };
 
   return (
     <div className="Pagination">
       <TablePagination
         component="div"
-        count={people.totalCount}
+        count={people.data.totalCount}
         page={page}
         onPageChange={handleChangePage}
-        rowsPerPage={rowsPerPage}
+        rowsPerPage={size}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
     </div>
   );
 }
-
-Pagination.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  people: PropTypes.object.isRequired,
-  changePage: PropTypes.func.isRequired,
-  changeSize: PropTypes.func.isRequired,
-};
