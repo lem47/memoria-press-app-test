@@ -12,8 +12,10 @@
   }
 
   &__form {
+    position: relative;
     margin: 0 auto;
     width: 499px;
+    min-width: 300px;
     display: flex;
     align-items: center;
   }
@@ -32,7 +34,7 @@
 
   &__search {
     position: absolute;
-    right: 35.5%;
+    right: 15px;
     cursor: pointer;
   }
 }

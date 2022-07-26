@@ -88,7 +88,14 @@ export const PersonRow = ({ person }) => (
 );
 
 PersonRow.propTypes = {
-  person: PropTypes.node,
+  person: PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.number,
+    class: PropTypes.string,
+    score: PropTypes.string,
+    speed: PropTypes.string,
+    parents: PropTypes.arrayOf(PropTypes.string),
+  }),
 };
 
 PersonRow.defaultProps = {
