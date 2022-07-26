@@ -1,35 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Pagination.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
-import { fetchData } from '../../toolkitRedux/services/studentsApi';
+import { changePage, changeSize } from '../../redux/dataSlice';
 
 export default function Pagination() {
+  const { page, size } = useSelector(state => state);
+
   const dispatch = useDispatch();
   const people = useSelector(state => state.data);
 
-  let page = 0;
-  let size = 10;
-
-  useEffect(() => {
-    dispatch(fetchData(page, size));
-  }, [page, size]);
-
   const handleChangePage = (event, newPage) => {
-    page = newPage;
+    dispatch(changePage(newPage + 1));
   };
 
   const handleChangeRowsPerPage = (event) => {
-    size = (parseInt(event.target.value, 10));
-    page = 0;
+    dispatch(changeSize(parseInt(event.target.value, 10)));
   };
 
   return (
     <div className="Pagination">
       <TablePagination
         component="div"
-        count={people.data.totalCount}
-        page={page}
+        count={people.totalCount}
+        page={page - 1}
         onPageChange={handleChangePage}
         rowsPerPage={size}
         onRowsPerPageChange={handleChangeRowsPerPage}

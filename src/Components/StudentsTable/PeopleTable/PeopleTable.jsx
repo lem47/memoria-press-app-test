@@ -1,11 +1,14 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import './PeopleTable.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeSortBy, changeSortDir } from '../../../redux/dataSlice';
 import { PersonRow } from '../PersonRow/PersonRow';
 
 export const PeopleTable = () => {
-  const people = useSelector(state => state.data.data);
+  const [dir, setDir] = useState(-1);
+
+  const dispatch = useDispatch();
+  const people = useSelector(state => state.data);
 
   return (
     <table className="PeopleTable">
@@ -39,6 +42,11 @@ export const PeopleTable = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="PeopleTable__az"
+                onClick={() => {
+                  dispatch(changeSortBy('name'));
+                  setDir(dir * -1);
+                  dispatch(changeSortDir(dir));
+                }}
               >
                 <path
                   d="M8.95998 2.10666L7.38665 0.533325L5.81332
@@ -65,6 +73,11 @@ export const PeopleTable = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="PeopleTable__arrows"
+                onClick={() => {
+                  dispatch(changeSortBy('class'));
+                  setDir(dir * -1);
+                  dispatch(changeSortDir(dir));
+                }}
               >
                 <path
                   d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
@@ -86,6 +99,11 @@ export const PeopleTable = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="PeopleTable__arrows"
+                onClick={() => {
+                  dispatch(changeSortBy('score'));
+                  setDir(dir * -1);
+                  dispatch(changeSortDir(dir));
+                }}
               >
                 <path
                   d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
@@ -107,6 +125,11 @@ export const PeopleTable = () => {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 className="PeopleTable__arrows"
+                onClick={() => {
+                  dispatch(changeSortBy('speed'));
+                  setDir(dir * -1);
+                  dispatch(changeSortDir(dir));
+                }}
               >
                 <path
                   d="M4.00006 1.88667L6.1134 4L7.0534 3.06L4.00006
