@@ -12,8 +12,10 @@
   }
 
   &__form {
+    position: relative;
     margin: 0 auto;
     width: 499px;
+    min-width: 300px;
     display: flex;
     align-items: center;
   }
@@ -32,19 +34,7 @@
 
   &__search {
     position: absolute;
-    right: 35.5%;
-    cursor: pointer;
-  }
-
-  &__export {
-    margin: 0 173px 0 202px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #C0C0C0;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
+    right: 15px;
     cursor: pointer;
   }
 }

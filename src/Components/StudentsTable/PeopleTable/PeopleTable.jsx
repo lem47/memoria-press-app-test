@@ -147,7 +147,7 @@ export const PeopleTable = () => {
 
       <tbody className="PeopleTable__content">
         {people.data.map(person => (
-          <PersonRow person={person} key={person.id} />
+          <PersonRow key={person.id} person={person} />
         ))}
       </tbody>
     </table>

@@ -1,8 +1,8 @@
 import React from 'react';
-import './Pagination.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import TablePagination from '@mui/material/TablePagination';
+import { useDispatch, useSelector } from 'react-redux';
 import { changePage, changeSize } from '../../redux/dataSlice';
+import './Pagination.scss';
 
 export default function Pagination() {
   const { page, size } = useSelector(state => state);
