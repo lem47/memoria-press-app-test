@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchData } from './toolkitRedux/services/studentsApi';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchData } from './store/ActionCreators';
 import './App.scss';
 
 import { Header } from './Components/Header/Header';
@@ -10,10 +10,29 @@ import { PeoplePage } from './Components/StudentsTable/PeoplePage/PeoplePage';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const {
+    page,
+    size,
+    search,
+    sortBy,
+    sortDir,
+  } = useSelector(state => state);
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, []);
+    dispatch(fetchData({
+      page,
+      size,
+      search,
+      sortBy,
+      sortDir,
+    }));
+  }, [
+    page,
+    size,
+    search,
+    sortBy,
+    sortDir,
+  ]);
 
   return (
     <div className="App">

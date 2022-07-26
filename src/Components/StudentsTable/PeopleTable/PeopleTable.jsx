@@ -1,11 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import './PeopleTable.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { PersonRow } from '../PersonRow/PersonRow';
 
 export const PeopleTable = () => {
-  const people = useSelector(state => state.data.data);
+  const dispatch = useDispatch();
+  const people = useSelector(state => state.data);
 
   return (
     <table className="PeopleTable">
