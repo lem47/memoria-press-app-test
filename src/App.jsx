@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchData } from './store/ActionCreators';
+import { fetchData } from './redux/dataSlice';
 import './App.scss';
 
 import { Header } from './Components/Header/Header';
