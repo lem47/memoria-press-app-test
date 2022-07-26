@@ -1,15 +1,26 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeSearch } from '../../redux/dataSlice';
 import './SearchBar.scss';
 
 export const SearchBar = () => {
   const [value, setValue] = useState('');
+
+  const dispatch = useDispatch();
 
   return (
     <div className="SearchBar">
       <h1 className="SearchBar__title">
         Students
       </h1>
-      <form className="SearchBar__form">
+      <form
+        className="SearchBar__form"
+        onSubmit={(event) => {
+          event.preventDefault();
+          dispatch(changeSearch(value));
+          setValue('');
+        }}
+      >
         <input
           className="SearchBar__input"
           placeholder="Enter Student Name, Parent or ID here"
@@ -25,6 +36,10 @@ export const SearchBar = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="SearchBar__search"
+          onClick={() => {
+            dispatch(changeSearch(value));
+            setValue('');
+          }}
         >
           <path
             d="M8.33333 7.33333H7.80667L7.62 7.15333C8.27333 6.39333
