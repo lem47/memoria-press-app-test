@@ -11,6 +11,7 @@
   &__title {
     display: flex;
     text-transform: uppercase;
+    cursor: default;
   }
 
   &__titleKey {
@@ -78,6 +79,7 @@
     margin-top: 13px;
     display: flex;
     flex-direction: column;
+    cursor: default;
   }
 
   &__legend {
@@ -104,6 +106,7 @@
     display: flex;
     font-weight: 700;
     text-transform: uppercase;
+    cursor: default;
   }
 
   &__averageScore {

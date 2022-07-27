@@ -15,7 +15,7 @@ export const PersonRow = ({
   return (
     <>
       <tr
-        className={person.id % 2 === 0 ? 'PersonRow active' : 'PersonRow'}
+        className="PersonRow"
         onClick={() => setIsExpand(!isExpand)}
       >
         <td className="PersonRow__check">

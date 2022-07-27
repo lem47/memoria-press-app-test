@@ -20,7 +20,7 @@ export const PeopleTable = () => {
     size: 10,
     search: '',
     sortBy: '',
-    sortDir: '',
+    sortDir: -1,
   };
 
   const handleSelectAll = (e) => {
@@ -74,7 +74,9 @@ export const PeopleTable = () => {
               </svg>
             </div>
           </th>
-          <th className="PeopleTable__headers" style={{ width: 100 }}>ID</th>
+          <th className="PeopleTable__headers" style={{ width: 100 }}>
+            <p className="PeopleTable__name">ID</p>
+          </th>
           <th className="PeopleTable__headers" style={{ width: 100 }}>
             <div className="PeopleTable__header">
               <p className="PeopleTable__name">Class</p>
@@ -158,7 +160,7 @@ export const PeopleTable = () => {
           </th>
           <th className="PeopleTable__headers">
             <div className="PeopleTable__header">
-              <p>Parents</p>
+              <p className="PeopleTable__name">Parents</p>
               {sorted && (
                 <div
                   className="PeopleTable__clear"
