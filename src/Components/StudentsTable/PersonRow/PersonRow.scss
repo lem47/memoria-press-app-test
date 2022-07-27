@@ -1,6 +1,23 @@
 .PersonRow {
+  background: #FFFFFF;
+  box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+
+  &:hover {
+    background-color: #F9F9F9;
+    box-shadow: 0px 1px 4px rgba(60, 52, 135, 0.15);
+  }
+
+  &__check {
+    margin: 14px 0 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    cursor: default;
+  }
+
   &__value {
     padding: 14px 0;
+    cursor: default;
   }
 
   &__checkbox {

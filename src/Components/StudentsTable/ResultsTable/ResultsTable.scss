@@ -1,0 +1,11 @@
+.ResultsTable {
+  margin-top: 13px;
+  border-collapse: collapse;
+
+  &__header {
+    padding-bottom: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: default;
+  }
+}

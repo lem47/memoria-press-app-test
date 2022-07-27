@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
 import { CSVLink } from 'react-csv';
 import './ExportCSV.scss';
@@ -57,13 +58,7 @@ const ExportCSV = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path
-                d="M4.99992 0.5L0.333252 5.16667H2.99992V9.16667H6.99992V5.
-                16667H9.66659L4.99992 0.5ZM5.66659 3.83333V7.83333H4.33325V3.
-                83333H3.55325L4.99992 2.38667L6.44659 3.83333H5.66659ZM0.333252
-                10.5H9.66659V11.8333H0.333252V10.5Z"
-                fill="#C0C0C0"
-              />
+              <path d="M5.00016 0.5L0.333496 5.16667H3.00016V9.16667H7.00016V5.16667H9.66683L5.00016 0.5ZM5.66683 3.83333V7.83333H4.3335V3.83333H3.5535L5.00016 2.38667L6.44683 3.83333H5.66683ZM0.333496 10.5H9.66683V11.8333H0.333496V10.5Z" fill="#C0C0C0" />
             </svg>
             <p>Export CSV</p>
           </CSVLink>
