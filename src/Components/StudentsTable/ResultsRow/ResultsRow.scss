@@ -1,0 +1,9 @@
+.ResultsRow {
+  padding: 8px 0;
+  font-size: 16px;
+
+  &.active {
+    background-color: #F7E5E5;
+    border: 1px solid #A6192E;
+  }
+}

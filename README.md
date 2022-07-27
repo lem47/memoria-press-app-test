@@ -6,7 +6,7 @@
 
 * All data comes from the server;
 * Headers of the page are hardcoded;
-* Search, sorting and pagination are fully functional;
+* Search, sorting and pagination are fully functional (EXTRA: You can also reset sorting);
 * You can click on the row of the student to see the internal table with the test results;
 * You can push CSV button and generate a .csv file with data displayed in the table.
 

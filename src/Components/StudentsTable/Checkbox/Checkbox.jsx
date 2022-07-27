@@ -8,6 +8,7 @@ const Checkbox = ({ type, name, id, handleClick, isChecked }) => (
     id={id}
     onChange={handleClick}
     checked={isChecked}
+    style={{ cursor: 'pointer' }}
   />
 );
 

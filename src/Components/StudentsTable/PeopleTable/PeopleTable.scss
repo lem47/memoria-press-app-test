@@ -49,4 +49,13 @@
     text-align: left;
     color: #828282;
   }
+
+  &__clear {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #A6192E;
+    cursor: pointer;
+  }
 }

@@ -1,0 +1,116 @@
+.PersonResult {
+  color: #777777;
+  background-color: #F2F2F2;
+
+  &__container {
+    padding: 20px 200px 24px 60px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    display: flex;
+    text-transform: uppercase;
+  }
+
+  &__titleKey {
+    margin-right: 8px;
+  }
+
+  &__titleValue {
+    margin-right: 15px;
+    color: #5B5B5B;
+    font-weight: 700;
+  }
+
+  &__selectors {
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__selector {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+  }
+
+  &__selectorTitle {
+    margin-left: 12px;
+    color: #5B5B5B;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    margin: 0 18px 0 10px;
+  }
+
+  &__selectorDate {
+    width: 199px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__refresh {
+    margin-left: 190px;
+    cursor: pointer;
+  }
+
+  &__devider {
+    margin-top: 13px;
+    width: 1200px;
+    height: 1px;
+    background-color: #A6192E;
+  }
+
+  &__legends {
+    margin-top: 13px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    text-transform: uppercase;
+  }
+
+  &__legendValue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__legendPoint {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  &__average {
+    margin: 20px 0 0 100px;
+    display: flex;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__averageScore {
+    margin-left: 237px;
+  }
+
+  &__averageSpeed {
+    margin-left: 60px;
+  }
+}
