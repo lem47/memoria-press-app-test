@@ -1,26 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './PersonRow.scss';
+import Checkbox from '../Checkbox/Checkbox';
 
-export const PersonRow = ({ person }) => (
+export const PersonRow = ({ person, handleClick, isCheck }) => (
   <tr className="PersonRow">
-    <td className="PersonRow__value">
-      <svg
-        width="12"
-        height="12"
-        viewBox="0 0 12 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
+    <td className="PersonRow__check">
+      <Checkbox
+        key={person.id + 100}
+        type="checkbox"
+        name={person.name}
+        id={person.id}
+        handleClick={handleClick}
+        isChecked={isCheck.includes(person.id)}
         className="PersonRow__checkbox"
-      >
-        <path
-          d="M10.6667 1.33333V10.6667H1.33333V1.33333H10.6667ZM10.6667
-          0H1.33333C0.6 0 0 0.6 0 1.33333V10.6667C0 11.4 0.6 12 1.33333
-          12H10.6667C11.4 12 12 11.4 12 10.6667V1.33333C12
-          0.6 11.4 0 10.6667 0Z"
-          fill="#777777"
-        />
-      </svg>
+      />
       {person.name}
     </td>
     <td className="PersonRow__value">{person.id}</td>
@@ -96,8 +90,12 @@ PersonRow.propTypes = {
     speed: PropTypes.string,
     parents: PropTypes.arrayOf(PropTypes.string),
   }),
+  handleClick: PropTypes.func,
+  isCheck: PropTypes.arrayOf(PropTypes.node),
 };
 
 PersonRow.defaultProps = {
   person: {},
+  handleClick: () => {},
+  isCheck: [],
 };

@@ -3,12 +3,32 @@ import './PeopleTable.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { changeSortBy, changeSortDir } from '../../../redux/dataSlice';
 import { PersonRow } from '../PersonRow/PersonRow';
+import Checkbox from '../Checkbox/Checkbox';
 
 export const PeopleTable = () => {
   const [dir, setDir] = useState(-1);
+  const [isCheckAll, setIsCheckAll] = useState(false);
+  const [isCheck, setIsCheck] = useState([]);
 
   const dispatch = useDispatch();
   const people = useSelector(state => state.data);
+
+  const handleSelectAll = (e) => {
+    setIsCheckAll(!isCheckAll);
+    setIsCheck(people.data.map(person => person.id));
+    if (isCheckAll) {
+      setIsCheck([]);
+    }
+  };
+
+  const handleClick = (e) => {
+    const { id, checked } = e.target;
+
+    setIsCheck([...isCheck, +id]);
+    if (!checked) {
+      setIsCheck(isCheck.filter(item => item !== +id));
+    }
+  };
 
   return (
     <table className="PeopleTable">
@@ -16,23 +36,14 @@ export const PeopleTable = () => {
         <tr>
           <th className="PeopleTable__headers" style={{ width: 420 }}>
             <div className="PeopleTable__header">
-              <div>
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="PeopleTable__checkbox"
-                >
-                  <path
-                    d="M10.6667 1.33333V10.6667H1.33333V1.33333H10.6667ZM10.6667
-                    0H1.33333C0.6 0 0 0.6 0 1.33333V10.6667C0 11.4 0.6 12
-                    1.33333 12H10.6667C11.4 12 12 11.4 12 10.6667V1.33333C12
-                    0.6 11.4 0 10.6667 0Z"
-                    fill="#777777"
-                  />
-                </svg>
+              <div className="PeopleTable__check">
+                <Checkbox
+                  type="checkbox"
+                  name="selectAll"
+                  id={0}
+                  handleClick={handleSelectAll}
+                  isChecked={isCheckAll}
+                />
                 <p className="PeopleTable__name">Name</p>
               </div>
               <svg
@@ -147,7 +158,12 @@ export const PeopleTable = () => {
 
       <tbody className="PeopleTable__content">
         {people.data.map(person => (
-          <PersonRow key={person.id} person={person} />
+          <PersonRow
+            key={person.id}
+            person={person}
+            handleClick={handleClick}
+            isCheck={isCheck}
+          />
         ))}
       </tbody>
     </table>

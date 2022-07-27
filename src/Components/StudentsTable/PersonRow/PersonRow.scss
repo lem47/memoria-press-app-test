@@ -1,4 +1,11 @@
 .PersonRow {
+  &__check {
+    margin: 14px 0 14px 22px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
+  }
+
   &__value {
     padding: 14px 0;
   }
