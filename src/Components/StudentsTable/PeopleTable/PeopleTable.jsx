@@ -21,7 +21,7 @@ export const PeopleTable = () => {
     }
   };
 
-  const handleClick = (e) => {
+  const handleSelect = (e) => {
     const { id, checked } = e.target;
 
     setIsCheck([...isCheck, +id]);
@@ -161,7 +161,7 @@ export const PeopleTable = () => {
           <PersonRow
             key={person.id}
             person={person}
-            handleClick={handleClick}
+            handleClick={handleSelect}
             isCheck={isCheck}
           />
         ))}
