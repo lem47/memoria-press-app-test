@@ -1,0 +1,45 @@
+.ResultsSelectors {
+  &__selectors {
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__selector {
+    height: 32px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #C0C0C0;
+    cursor: pointer;
+  }
+
+  &__selectorTitle {
+    margin-left: 12px;
+    color: #5B5B5B;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__arrow {
+    margin: 0 18px 0 10px;
+  }
+
+  &__selectorDate {
+    width: 199px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #C0C0C0;
+    border-bottom: 1px solid #C0C0C0;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  &__refresh {
+    margin-left: 190px;
+    cursor: pointer;
+  }
+}
